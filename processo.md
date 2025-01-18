@@ -66,7 +66,7 @@ Após escrever o código acima, faça o seguinte:
 ![Compilando o projeto](/images/baixando_putty.png)
 
 9) Abra o programa putty, clique em Serial e digite o seguinte:
-    - Em Serial line, digite a porta que a sua placa está conectada (COM8);
+    - Em Serial line, digite a porta que a sua placa está conectada (COM8, no meu caso);
     - Em Speed, digite **115200**.
 
 ![Compilando o projeto](/images/configurando_putty.png)
