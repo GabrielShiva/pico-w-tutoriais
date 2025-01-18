@@ -95,6 +95,24 @@ E assim, ficou a exibição no terminal.
 
 ![Compilando o projeto](/images/putty_codigo_modificado.png)
 
+# Sobre o Zadig
+
+Colocando a placa no modo Bootsel, abra o zadig e clique na opção para listar todos os dispositivos.
+
+![Compilando o projeto](/images/zadig_dispositivos.png)
+
+Aparecerá o dispositivo RP2 com duas interfaces, Interface 0 e a Interface 1. 
+
+![Compilando o projeto](/images/zadig_lista.png)
+
+Não importa o que aconteça, não mexa na **Interface 0**. Selecione a Interface 1 e clique em **Install Driver**. Caso para você apareça **Reinstall Driver**, não será necessário fazer nada. Após isso, se quiser desinstale esse programa, pois ele não será mas necessário.
+
+![Compilando o projeto](/images/zadig_reinstall.png)
+
+A título de curiosidade, o driver que deve aparecer para a Interface 0 é a presente na imagem abaixo.
+
+![Compilando o projeto](/images/zadig_interface_0.png)
+
 Espero que tenha ajudado!
 
 > Aqui, um vídeo que pode ajudar, caso tenha alguma dúvida: **[Talk to Your Pico Over Serial | Raspberry Pi Pico UART Tutorial](https://www.youtube.com/watch?v=pbWhoJdYA1s)**.
