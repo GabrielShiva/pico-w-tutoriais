@@ -97,3 +97,5 @@ E assim, ficou a exibição no terminal.
 
 Espero que tenha ajudado!
 
+> Aqui, um vídeo que pode ajudar, caso tenha alguma dúvida: **[Talk to Your Pico Over Serial | Raspberry Pi Pico UART Tutorial](https://www.youtube.com/watch?v=pbWhoJdYA1s)**.
+
