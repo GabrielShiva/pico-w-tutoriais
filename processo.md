@@ -1,5 +1,11 @@
 # COMO CRIAR COMUNICAÇÃO ENTRE O PUTTY E O RASPBERRY PI PICO W
 
+## SUMÁRIO
+1. **[Configurando Putty e o Projeto](#configurando-putty-e-o-projeto)**
+2. **[Sobre o Zaddig](#sobre-o-zadig)**
+
+
+## Configurando Putty e o Projeto
 Com o VsCode aberto, crie um projeto em C do zero utilizando a extensão Raspberry Pi Pico Project, como indica a imagem abaixo.
 
 ![Criando novo projeto para o raspberry pi pico w](/images/criar_projeto.png)
@@ -38,44 +44,48 @@ int main() {
 
 Após escrever o código acima, faça o seguinte:
 
-1) Coloque a placa do raspberry pi no modo bootsel, segurando o botão branco e apertando, ao mesmo tempo, o botão de reset da placa. Matenha o USB da placa desconectada do computador.
+- Ligue a placa do raspberry pi (colocando a chave na posição LIGAR) e, em seguida, coloque a placa no modo bootsel, segurando o botão branco e apertando, ao mesmo tempo, o botão de reset da placa. Matenha o USB da placa desconectada do computador.
 
-2) Digite na barra de pesquisa do Windows: gerenciador de dispositivos.
+- Na aba de gerenciador de dispositivos, clique em *Exibir > Mostrar dispositivos ocultos*
+
+![Listando dispositivos ocultos](/images/dispositivos_ocultos.png)
+
+- Digite na barra de pesquisa do Windows: gerenciador de dispositivos.
     - Clique na opção Portas (COM e LPT)
 
 ![Portas sem o PICO](/images/portas_sem_pico.png)
 
-3) Conecte o pico W no computador por meio do USB. 
+- Conecte o pico W no computador por meio do USB. 
 
-4) Compile o projeto.
+- Compile o projeto.
 
 ![Compilando o projeto](/images/compilando.png)
 
-5) Arraste o arquivo **.uf2** que está na pasta **build** para a placa com o nome RPI-RP2.
+- Arraste o arquivo **.uf2** que está na pasta **build** para a placa com o nome RPI-RP2.
 
-![Compilando o projeto](/images/carregando_arquivo_para_pico.png)
+![Carrengando arquivos .uf2 para o pico w](/images/carregando_arquivo_para_pico.png)
 
-6) No gerenciador de dispositivos, veja qual porta o pico está conectado. No meu caso foi a porta COM8.
+- No gerenciador de dispositivos, veja qual porta o pico está conectado. No meu caso foi a porta COM8.
 
-![Compilando o projeto](/images/observando_porta.png)
+![Verificando porta da placa](/images/observando_porta.png)
 
-7) Instale o putty no seguinte link: **[clique aqui](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)**.
+- Instale o putty no seguinte link: **[clique aqui](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)**.
 
-8) Selecione uma versão (.exe) do putty se o seu PC é 32bits ou 64bits.
+- Selecione uma versão (.exe) do putty se o seu PC é 32bits ou 64bits.
 
-![Compilando o projeto](/images/baixando_putty.png)
+![Fazendo o download do executável do putty](/images/baixando_putty.png)
 
-9) Abra o programa putty, clique em Serial e digite o seguinte:
+- Abra o programa putty, clique em Serial e digite o seguinte:
     - Em Serial line, digite a porta que a sua placa está conectada (COM8, no meu caso);
     - Em Speed, digite **115200**.
 
-![Compilando o projeto](/images/configurando_putty.png)
+![Configurando o putty](/images/configurando_putty.png)
 
-8) Após digitar as informações necessárias, clique no botão **Open**.
+- Após digitar as informações necessárias, clique no botão **Open**.
 
-9) Com o terminal aberto, digite algum texto (como *PEIXE*) e aperte a tecla **Enter**. O seu texto deve aparecer. na tela.
+- Com o terminal aberto, digite algum texto (como *PEIXE*) e aperte a tecla **Enter**. O seu texto deve aparecer. na tela.
 
-![Compilando o projeto](/images/testando_terminal_serial.png)
+![Testando o código no putty](/images/testando_terminal_serial.png)
 
 > **NOTA**: perceba que, enquanto você estiver digitando o texto, o retorno do que você estiver digitando não aparecerá na tela, apenas quando você clicar na tecla Enter.
 
@@ -89,29 +99,29 @@ Após isso, sempre repita o mesmo processo:
 
 No meu caso, modifiquei o código para ficar exibindo um texto a cada 500ms.
 
-![Compilando o projeto](/images/codigo_modificado.png)
+![Compilando novo código do projeto](/images/codigo_modificado.png)
 
 E assim, ficou a exibição no terminal.
 
-![Compilando o projeto](/images/putty_codigo_modificado.png)
+![Exibindo o código modificado no putty](/images/putty_codigo_modificado.png)
 
 # Sobre o Zadig
 
 Colocando a placa no modo Bootsel, abra o zadig e clique na opção para listar todos os dispositivos.
 
-![Compilando o projeto](/images/zadig_dispositivos.png)
+![Listar todos os dispositivos no zadig](/images/zadig_dispositivos.png)
 
 Aparecerá o dispositivo RP2 com duas interfaces, Interface 0 e a Interface 1. 
 
-![Compilando o projeto](/images/zadig_lista.png)
+![Exibindo a lista com os dispositivos no zadig](/images/zadig_lista.png)
 
 Não importa o que aconteça, não mexa na **Interface 0**. Selecione a Interface 1 e clique em **Install Driver**. Caso para você apareça **Reinstall Driver**, não será necessário fazer nada. Após isso, se quiser desinstale esse programa, pois ele não será mas necessário.
 
-![Compilando o projeto](/images/zadig_reinstall.png)
+![Exibindo o driver da interface 01 no zadig](/images/zadig_reinstall.png)
 
 A título de curiosidade, o driver que deve aparecer para a Interface 0 é a presente na imagem abaixo.
 
-![Compilando o projeto](/images/zadig_interface_0.png)
+![Exibindo o driver da interface 02 no zadig](/images/zadig_interface_0.png)
 
 Espero que tenha ajudado!
 
