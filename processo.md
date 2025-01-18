@@ -61,7 +61,7 @@ Após escrever o código acima, faça o seguinte:
 
 7) Instale o putty no seguinte link: **[clique aqui](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)**.
 
-8) Selecione uma versão (.exe) do putty se o seu PC é x86 ou x64.
+8) Selecione uma versão (.exe) do putty se o seu PC é 32bits ou 64bits.
 
 ![Compilando o projeto](/images/baixando_putty.png)
 
